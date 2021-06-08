@@ -1,11 +1,11 @@
 if not game:IsLoaded() then
-    print("Game is loading waiting... | Shuko's Empty Server Finder")
+    print("Game is loading waiting... | Amnesia Empty Server Finder")
     repeat
         wait()
     until game:IsLoaded()
     end
 
-local maxplayers = 10
+local maxplayers = math.huge
 local serversmaxplayer;
 local goodserver;
 local gamelink = "https://games.roblox.com/v1/games/" .. game.PlaceId .. "/servers/Public?sortOrder=Asc&limit=100"
@@ -18,7 +18,7 @@ function serversearch()
             goodserver = v.id
         end
     end
-    print("Currently checking the servers with max this number of players : " .. maxplayers .. " | Shuko's Empty Server Finder")
+    print("Currently checking the servers with max this number of players : " .. maxplayers .. " | Amnesia Empty Server Finder")
 end
 
 function getservers()
@@ -39,9 +39,9 @@ end
 getservers()
 
     print("All of the servers are searched") 
-	print("Server : " .. goodserver .. " Players : " .. maxplayers .. "/" .. serversmaxplayer .. " | Shuko's Empty Server Finder")
+	print("Server : " .. goodserver .. " Players : " .. maxplayers .. "/" .. serversmaxplayer .. " | Amnesia Empty Server Finder")
     if AutoTeleport then
-        if DontTeleportTheSameNumber then 
+        if NeverSameNumber then 
             if #game:GetService("Players"):GetPlayers() - 1 == maxplayers then
                 return warn("It has same number of players (except you)")
             elseif goodserver == game.JobId then
