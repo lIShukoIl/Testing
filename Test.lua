@@ -1,3 +1,5 @@
+getgenv().AutoTeleport = true
+
 if not game:IsLoaded() then
     print("Game is loading waiting... | Amnesia Empty Server Finder")
     repeat
